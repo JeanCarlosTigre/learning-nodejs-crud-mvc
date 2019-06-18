@@ -32,6 +32,7 @@
 <script src="/js/helper.js"></script>
 
 <script type="text/javascript">
+  
   /* TODO
   Implementar requisição assíncrona para listar as
   notícias armazenadas no banco de dados. Utilize
@@ -47,6 +48,7 @@
     }).done(function(json){
       console.log(json);
       makeTableHead('table_noticia', json.header, json.operations);
+      makeTableBody('table_noticia', json.data, json.operations);
     })
 
   })

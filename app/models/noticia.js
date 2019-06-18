@@ -14,6 +14,10 @@ NoticiaDao.prototype.findById = function(connection, noticia_id, callback) {
 	/* TODO
 	Implementar a funão findById
 	*/
+
+	connection.query(
+		`SELECT noticia_id, titulo, DATE_FORMAT(data,'%d/%m/%Y') as data, conteudo FROM noticia WHERE noticia_id = ${noticia_id}`, callback
+	);
 }
 
 NoticiaDao.prototype.add = function(connection, noticia, callback) {
